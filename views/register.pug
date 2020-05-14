@@ -1,0 +1,51 @@
+extends ./layouts/common
+
+
+block content
+
+  .d-lg-flex.justify-content-center
+    .small-block(style="border: 1px solid #d4dbe0;padding: 1.5rem 2.5rem 2rem")
+      .pb-3
+        h2.text-success &emsp; Đăng ký làm gia sư &emsp;
+        hr  
+        if mes
+          .alert.alert-success.fade.in.alert-dismissible.show(style='margin-top:18px;')
+            button.close(type='button', data-dismiss='alert', aria-label='Close')
+              span(aria-hidden='true', style='font-size:20px') &times;
+            span=mes
+
+        form(method='POST', action='/signup/tutor')
+          .form-group
+            .input-group
+              .input-group-prepend
+                .input-group-text
+                  i.far.fa-user
+              input#name.form-control(name='name', type='text', value=values?values.name: "", placeholder='Họ tên của bạn', required='')
+          .form-group
+            .input-group
+              .input-group-prepend
+                .input-group-text
+                  i.fa.fa-envelope.icon
+              input#email.form-control(name='email', type='email', value=values?values.email: "", placeholder='Địa chỉ email', required='')
+          .form-group
+            .input-group
+              .input-group-prepend
+                .input-group-text
+                  i.fa.fa-key.icon
+              input#password.form-control(name='password', type='password', placeholder='Mật khẩu', required='')
+          
+          .form-group.mt-4
+
+            input.btn.btn-primary.mt-3.font-weight-bold(type='submit', value='Đăng Ký Ngay')
+   
+        hr
+        p.my-lead.mt-5.mb-0.text-center
+          span Bạn đã có tài khoản?
+          a.d-inline-block.text-underline.ml-2(href='/login') Đăng nhập
+
+        if errors
+          each error in errors
+            li
+              small(style='color:red')= error
+
+

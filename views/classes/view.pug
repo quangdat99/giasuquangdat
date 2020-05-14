@@ -1,0 +1,53 @@
+extends ../layouts/common
+
+
+block content
+  .col-lg-8.mt-2.mb-5
+    .pr-lg-5
+      h1.h2.mb-3 Chi tiết Mã lớp: B
+        span=classes.classId 
+      p.mb-4.text-muted
+        | T&igrave;nh tr&#x1EA1;ng: 
+        span.text-success &Dstrok;ang c&ograve;n
+        i.ml-1.fa.fa-check-circle-o.text-success
+
+
+      p.p-icon.mb-2
+        b
+          span= classes.subject 
+      p.p-icon.mb-2
+        span= classes.address  
+      p.p-icon.mb-2
+        span= classes.price 
+      p.p-icon.mb-2 Yêu cầu: 
+        span= classes.require 
+      p.p-icon.mb-2
+        span= classes.time  
+      p.mb-4
+      hr
+      p.mb-2
+        b Đặc điểm học sinh:
+      p.mb-2 Giới tính: 
+        span= classes.sex 
+      p.mb-2= classes.info  
+      p.mb-4
+      hr
+      p.mb-2
+        b Thông tin bổ sung: 
+        span= classes.additional  
+
+      hr
+      p.mb-2
+        | Mức thu nhập:  
+        b
+          span= classes.income  
+        span   &#x20AB;/th&aacute;ng
+      p.mb-2 Phí nhận lớp: 
+        span= classes.cost  
+        span.text-muted  (Chỉ nộp phí 1 lần, từ những tháng tiếp theo sẽ không mất phí)
+      p.mt-3.mb-2
+        b Chú thích: 
+        |  Phí nhận lớp bao gồm phí quản lý và xác minh thông tin gia sư, phí làm hợp đồng, phí tư vấn phụ huynh/học viên, phí quản lý thông tin lớp học.
+      .mt-4
+        a.btn.btn-primary.font-weight-bold(href='/dang-ky-nhan-lop/'+ classes.classId ) &raquo; &Dstrok;&abreve;ng k&yacute; nh&#x1EAD;n l&#x1EDB;p
+  // End Col

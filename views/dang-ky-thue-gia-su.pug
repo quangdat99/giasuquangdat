@@ -1,0 +1,48 @@
+extends ./layouts/common
+
+
+block content
+
+
+  .col-lg-12
+    h2.mb-4.text-success Đăng ký thuê gia sư
+    hr
+    br
+
+    if mes
+      .alert.alert-success.fade.in.alert-dismissible.show(style='margin-top:18px;')
+        button.close(type='button', data-dismiss='alert', aria-label='Close')
+          span(aria-hidden='true', style='font-size:20px') &times;
+        span=mes
+
+    form#form_order(action='/signup/phuhuynh', method='POST')  
+      .form-row
+        .col-lg-6.form-group
+
+          input#name.form-control(type='text', name='name', placeholder='Họ và tên', value=values?values.name: "")
+        .col-lg-6.form-group
+          input#phone.form-control(type='number', name='phone', placeholder='Số điện thoại', value=values?values.phone: "")
+
+
+      .form-row
+        .col-lg-12.form-group.mt-lg-2
+          input.form-control(type='text', name='address', placeholder='Số nhà, tên đường', value=values?values.address: "")
+
+        .col-lg-12.form-group.mt-lg-2
+          input.form-control(type='text', name='message', placeholder='Ghi chú (không bắt buộc)', value=values?values.message: "")
+
+      .text-right
+        input.btn.btn-primary.mt-3.font-weight-bold(type='submit', value='Đăng Ký Ngay')
+
+    if errors
+      each error in errors
+        li
+          small(style='color:red')= error
+
+
+    .mt-4.pt-2.text-muted.text-justify
+      hr
+      p.mb-0
+        | Sau khi bạn đăng ký, chúng tôi sẽ gọi lại cho bạn để trao đổi thêm những thông tin cần thiết khác. Tất cả thông tin của bạn sẽ được bảo mật.
+
+

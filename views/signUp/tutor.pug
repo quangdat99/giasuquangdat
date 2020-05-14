@@ -1,0 +1,37 @@
+extends ../layouts/common
+
+
+block content
+	h1 Danh sách gia sư đăng ký
+
+	div(style='overflow-x:auto;')
+
+
+		table.table.table-bordered
+			thead 
+				tr
+					th Tên
+					th Email 
+					th Điện thoại 
+					th Chi tiết 
+					th Xóa 
+
+
+			tbody
+				each _tutor in tutor 	
+					tr 
+						td= _tutor.name
+						td= _tutor.email 
+						td= _tutor.phone
+						td 
+							a(href='/signup/chitiet/' +_tutor.id)
+								button.btn.btn-success Chi tiết 
+						td 
+							
+							form(action='/delete/tutor/'+_tutor._id, method ='GET')
+								button.btn.btn-danger Xóa 
+	hr
+	.text-left
+		a(href='/admin')
+			button.btn.btn-primary Quay lại
+

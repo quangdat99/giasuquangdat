@@ -1,0 +1,97 @@
+extends ../layouts/common
+
+
+block content
+
+	h1 Danh sách lớp:
+		
+	div(style="overflow-y:scroll;height: 500px;width: 100%;")
+		table.table.table-bordered.table-responsive.table-striped.table-sm
+			thead
+				tr
+					th.th-sm Mã lớp 
+					th.th-sm Tên lớp 
+					th.th-sm Địa chỉ 
+					th.th-sm Giá tiền 
+					th.th-sm Yêu cầu 
+					th.th-sm Sửa
+					th.th-sm Xóa 
+			tbody
+				each _class in classes	
+					tr 
+						td= _class.classId
+						td= _class.subject
+						td= _class.address 
+						td= _class.price
+						td= _class.require 
+						td 
+							a(href='/classes/edit/'+ _class.classId)
+								button.btn.btn-success Sửa 
+
+						td 
+							form(action='/delete/class/'+ _class.classId, method ='GET')
+								button.btn.btn-danger Xóa 
+
+	
+	h1 Tạo lớp
+
+	
+
+	form(action="/classes/create", method="POST")
+		.row
+			.col-md-6.form-group
+				label(for="email") Mã lớp: 
+				input.form-control(type="number", name="classId", value=values?values.classId: "")
+
+			.col-md-6.form-group
+				label(for="email") Tên lớp:
+				input.form-control(type="text", name="subject", value=values?values.subject: "")
+
+			.col-md-6.form-group
+				label(for="email") Địa chỉ:
+				input.form-control(type="text", name="address", value=values?values.address: "")
+
+			.col-md-6.form-group
+				label(for="email") Giá tiền:
+				input.form-control(type="text", name="price", value=values?values.price: "")
+
+			.col-md-6.form-group
+				label(for="email") Yêu cầu:
+				input.form-control(type="text", name="require", value=values?values.require: "")
+			.col-md-6.form-group
+				label(for="email") Giới tính: 
+				input.form-control(type="text", name="sex", value=values?values.sex: "")
+
+			.col-md-6.form-group
+				label(for="email") Thông tin:
+				input.form-control(type="text", name="info", value=values?values.info: "")
+
+			.col-md-6.form-group
+				label(for="email") Thời gian học:
+				input.form-control(type="text", name="time", value=values?values.time: "")
+
+			.col-md-6.form-group
+				label(for="email") Mức thu nhập:
+				input.form-control(type="text", name="income", value=values?values.income: "")
+
+			.col-md-6.form-group
+				label(for="email") Chi phí:
+				input.form-control(type="text", name="cost", value=values?values.cost: "")
+
+			.col-md-6.form-group
+				label(for="email") Bổ sung:
+				input.form-control(type="text", name="additional", value=values?values.additional: "")
+
+		.text-right 
+			button.btn.btn-primary Tạo lớp 
+
+	if errors
+		each error in errors
+			li
+				small(style='color:red')= error
+	hr
+
+	.text-left
+		a(href='/admin')
+			button.btn.btn-primary Quay lại
+

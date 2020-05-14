@@ -1,0 +1,32 @@
+extends ../layouts/common
+
+
+block content
+	h1 Danh sách phụ huynh đăng ký
+
+	div(style='overflow-x:auto;')
+
+
+		table.table.table-bordered
+			thead
+				tr
+					th Họ tên 	
+					th Điện Thoại  
+					th Địa chỉ 
+					th Ghi chú 
+					th Xóa 
+			tbody
+				each _phuhuynh in phuhuynh	
+					tr 
+						td= _phuhuynh.name
+						td= _phuhuynh.phone
+						td= _phuhuynh.address 
+						td= _phuhuynh.message 
+						td 
+							form(action='/delete/phuhuynh/'+_phuhuynh._id, method ='GET')
+								button.btn.btn-danger Xóa 
+	hr
+	.text-left
+		a(href='/admin')
+			button.btn.btn-primary Quay lại
+

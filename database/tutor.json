@@ -1,0 +1,2 @@
+{"_id":{"$oid":"5e07ba743de0dc0f73dcbe0e"},"name":"Quang Đạt","email":"dat@gmail.com","password":"c4ca4238a0b923820dcc509a6f75849b","id":"GA5157","__v":0,"gioitinh":"Nam","namsinh":"1999","nganh":"CNTT","phone":"12345678","truong":"Bách khoa Hà Nội"}
+{"_id":{"$oid":"5e08a04c48f1ca0db48c9bd2"},"name":"Đăng Bảo","email":"dangbao@gmail.com","password":"e10adc3949ba59abbe56e057f20f883e","id":"GA2862","__v":0,"gioitinh":"Nam","namsinh":"1998","nganh":"TDH","phone":"01234567","truong":"BKHN"}

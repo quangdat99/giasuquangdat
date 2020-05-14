@@ -1,0 +1,41 @@
+extends ./layouts/common
+
+
+block content
+   
+
+  .d-lg-flex.justify-content-center
+    .small-block(style="border: 1px solid #d4dbe0;padding: 1.5rem 2.5rem 2rem")
+      .pb-3
+        h2.text-success &emsp; Đăng nhập vào tài khoản &emsp;
+        hr
+
+        form(method="POST" action="/auth/loginTutor")
+          .form-group 
+            label(for="email") Email:
+            .input-group
+              .input-group-prepend
+                .input-group-text
+                  i.fa.fa-envelope.icon
+              
+              input#email.form-control(type="text", name="email", value=values?values.email: "")
+
+          .form-group 
+            label(for="password") Password:
+            .input-group
+              .input-group-prepend
+                .input-group-text
+                  i.fa.fa-key.icon
+              input#password.form-control(type="password", name="password", value=values?values.password: "")
+
+          button.btn.btn-primary Đăng nhập
+        if errors
+          each error in errors
+            li
+              small(style='color:red')= error
+
+
+        hr
+        p.my-lead.mt-5.mb-0.text-center
+          span Bạn là thành viên mới?
+          a.d-inline-block.text-underline.ml-2(href='/register') Tạo tài khoản

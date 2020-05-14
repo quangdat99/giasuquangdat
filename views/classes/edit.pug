@@ -1,0 +1,58 @@
+extends ../layouts/common
+
+
+block content
+	h1 Sửa 
+
+	form(action="/classes/update", method="POST")
+		.row
+			.col-md-6.form-group
+				label(for="email") Mã lớp: 
+				input.form-control(type="number", name="classId", value=values.classId)
+
+			.col-md-6.form-group
+				label(for="email") Tên lớp:
+				input.form-control(type="text", name="subject", value=values.subject)
+
+			.col-md-6.form-group
+				label(for="email") Địa chỉ:
+				input.form-control(type="text", name="address", value=values.address)
+
+			.col-md-6.form-group
+				label(for="email") Giá tiền:
+				input.form-control(type="text", name="price", value=values.price)
+
+			.col-md-6.form-group
+				label(for="email") Yêu cầu:
+				input.form-control(type="text", name="require", value=values.require)
+			.col-md-6.form-group
+				label(for="email") Giới tính: 
+				input.form-control(type="text", name="sex", value=values.sex)
+
+			.col-md-6.form-group
+				label(for="email") Thông tin:
+				input.form-control(type="text", name="info", value=values.info)
+
+			.col-md-6.form-group
+				label(for="email") Thời gian học:
+				input.form-control(type="text", name="time", value=values.time)
+
+			.col-md-6.form-group
+				label(for="email") Mức thu nhập:
+				input.form-control(type="text", name="income", value=values.income)
+
+			.col-md-6.form-group
+				label(for="email") Chi phí:
+				input.form-control(type="text", name="cost", value=values.cost)
+
+			.col-md-6.form-group
+				label(for="email") Bổ sung:
+				input.form-control(type="text", name="additional", value=values.additional)
+
+		.text-right
+			input.btn.btn-primary.mt-3.font-weight-bold(type='submit', value='Cập nhật ngay ')
+
+	//- if errors
+	//- 	each error in errors
+	//- 		li
+	//- 			small(style='color:red')= error

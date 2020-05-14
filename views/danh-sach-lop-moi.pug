@@ -1,0 +1,81 @@
+extends ./layouts/common
+
+
+block content
+	h1 Danh Sách Lớp Mới 
+
+	.mt-4.mb-4
+			
+		form(method='GET', action='/classes/search')
+				input.search-input(type='text', name='q', placeholder='Tìm kiếm lớp gia sư phù hợp ...', value=values)
+				button.search-btn(type='submit') Tìm kiếm 
+		
+
+		hr
+
+		.row 		
+
+			
+			each _class in classes 
+				.col-lg-3.col-md-4.col-sm-6
+					.myclass-item.text-small
+						.myclass-item-head
+							a#malop(href='/classes/' + _class.classId)
+								span.font-weight-bold Mã lớp: B
+									span= _class.classId 
+						.myclass-item-body
+							p.p-icon.mb-2 
+								i.fa.fa-address-book
+								span= _class.subject 
+							p.p-icon.mb-2
+								i.fas.fa-map-marker-alt
+								span= _class.address
+							p.p-icon.mb-2
+								i.fa.fa-dollar
+								span= _class.price
+							p.p-icon.mb-2 
+								i.far.fa-flag
+								span Yêu cầu:	
+								span=	_class.require 
+							.text-right.mt-3
+								a.btn.btn-success.btn-sm.font-weight-bold(href='/classes/' + _class.classId) &raquo; Xem chi tiết 
+		
+
+	
+	if pages > 0 
+		nav(aria-label='Page navigation example')
+			ul.pagination.justify-content-center
+				if current == 1
+					li.page-item.disabled
+						a.page-link &laquo;
+				else
+					li.page-item
+						a.page-link(href="/danh-sach-lop-moi?page=1") &laquo;
+				
+				- var i = (Number(current) > 5 ? Number(current) - 4 : 1);
+				if i !== 1 
+					li.page-item.disabled
+						a.page-link ...
+				
+				- for (; i <= (Number(current) + 4) && i <= pages; i++ )
+					if i == current 
+						li.page-item.active
+							a.page-link=i
+					else 
+						li.page-item
+							a.page-link(href="/danh-sach-lop-moi?page="+ i)= i 
+					
+					if (i == Number(current) + 4 && i < pages) 
+						li.page-item.disabled
+							a.page-link ...
+					
+
+				
+				if (current == pages) 
+					li.page-item.disabled
+						a.page-link &raquo;
+				else 
+					li.page-item
+						a.page-link(href="/danh-sach-lop-moi?page="+ pages ) &raquo;
+				
+		

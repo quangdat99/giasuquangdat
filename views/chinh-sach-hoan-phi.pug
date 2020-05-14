@@ -1,0 +1,47 @@
+extends ./layouts/common
+
+
+block content
+  h1.h2 Chính sách hoàn phí
+  p.mt-4
+    | Trong trường hợp lớp bị hỏng do các nguyên nhân xuất phát từ phía phụ huynh/học viên, Trung tâm  sẽ
+    b xác minh thông tin
+    | , sau đó sẽ đổi lớp mới (nếu có lớp mới phù hợp), hoặc hoàn lại phí nhận lớp cho gia sư. Cụ thể:
+  h5.mt-4.mb-3 Đổi lớp mới
+  ul.list-square
+    li
+      | Nếu lớp bị hỏng, gia sư được chuyển 100% số tiền đã đặt cọc (số tiền đã thanh toán) sang lớp mới;
+      br
+      a.text-underline(href='/danh-sach-lop-moi') Xem tất cả lớp mới
+    li
+      | Phí nhận lớp chênh lệch giữa lớp cũ và lớp mới sẽ được trung tâm hoàn lại, hoặc yêu cầu gia sư thanh toán thêm.
+  h5.mt-4.mb-3 Hoàn lại tiền đặt cọc
+  ul.list-square
+    li
+      | Áp dụng khi lớp bị hỏng, nếu gia sư không tìm thấy lớp khác phù hợp, và không muốn chờ lớp mới;
+    li
+      | Trung tâm sẽ hoàn lại tiền đặc cọc cho gia sư, và trích lại 50.000đ tiền phí làm hợp đồng và phí xử lý lớp.
+  h5.mt-4.mb-3 Tính lại phí nhận lớp
+  p Các trường hợp gia sư được tính lại phí nhận lớp:
+  ul.list-dash
+    li Phụ huynh/học viên giảm số buổi học/tuần, giảm học phí;
+    li
+      | Lớp học bị huỷ, đồng thời số buổi học thực tế đã dạy nhỏ hơn số buổi học/tuần × 4.
+  p
+    | Số tiền đặt cọc nếu còn dư (chênh lệch giữa phí nhận lớp ban đầu và phí nhận lớp được tính lại) sẽ được trung tâm hoàn lại cho gia sư.
+  p.mt-4.pt-2
+    | Tất cả các thông tin liên quan đến việc đổi lớp mới, hoàn lại phí, tính lại phí sẽ được thể hiện chi tiết trong hợp đồng gia sư. Xem hợp đồng mẫu.
+
+  h5.mt-4.pt-3.font-weight-bold.mb-3.text-danger * Lưu ý: 
+  ul.list-square
+    li
+      | Các trường hợp thay đổi số buổi học/tuần mà Phụ huynh/học viên dự kiến chỉ thay đổi trong thời gian ngắn (nhỏ hơn hoặc bằng 4 tuần) sẽ không được áp dụng tính lại phí nhận lớp;
+    li
+      | Gia sư cần nhắn tin đến Fanpage 
+      a(target='_blank', href='https://m.me/giasugq', rel='nofollow') Gia sư Quang Đạt 
+      |  để thông báo cho trung tâm, với thời gian 
+      b muộn nhất 24h
+      |  sau khi phát sinh các vấn đề huỷ lớp, thay đổi số buổi học/tuần, thay đổi học phí;
+    li
+      | Các trường hợp lớp bị hủy hoặc giảm số buổi/tuần do các nguyên nhân xuất phát từ phía gia sư, sẽ không được áp dụng. Và nếu gia sư đang còn nợ phí nhận lớp, gia sư vẫn phải có trách nhiệm thanh toán đầy đủ.
+  a.btn.btn-primary.font-weight-bold.mt-4(href='/danh-sach-lop-moi') Xem danh sách lớp mới 

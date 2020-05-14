@@ -1,0 +1,33 @@
+extends ../layouts/common
+
+
+block content
+	h2 Chi tiết gia sư 
+
+	hr
+
+	p
+		b Tên: 
+		span= tutor.name
+	p
+		b Email: 
+		span= tutor.email 
+	p
+		b Điện thoại: 
+		span= tutor.phone
+	p
+		b Giới tính: 
+		span= tutor.gioitinh
+	p
+		b Năm sinh: 
+		span= tutor.namsinh
+	p
+		b Trường : 
+		span= tutor.truong
+	p
+		b Ngành: 
+		span= tutor.nganh
+	hr 
+	.text-left
+		a(href='/signup/tutor')
+			button.btn.btn-primary Quay lại

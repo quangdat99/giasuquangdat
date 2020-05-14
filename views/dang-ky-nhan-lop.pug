@@ -1,0 +1,53 @@
+extends ./layouts/common
+
+
+block content
+  .row
+    .col-lg-12
+      h1.h3 Đăng ký nhận lớp có mã lớp là: B
+        span=classes.classId 
+      
+      p.mt-3
+        b Chú thích:
+        |  Phí nhận lớp bao gồm phí quản lý và xác minh thông tin gia sư, phí làm hợp đồng, phí tư vấn phụ huynh/học viên, phí quản lý thông tin lớp học.
+      p
+        b Để đăng ký nhận lớp
+        | , hãy gọi đến số điện thoại 
+        span.badge
+          a(href='tel:+84961036600') 0123456789
+        |  (t&#x1EEB; 8h-18h, (từ 8h-18h, thứ 2 - thứ 7). Hoặc gửi tin nhắn tới Fanpage 
+        a.badge(target='_blank', href='https://m.me/giasuquangdat', rel='nofollow') Gia Sư Quang Dat 
+        |   với nội dung:
+      b
+        .alert.alert-info Gia sư 
+          span=tutorId 
+          span  đăng ký nhận lớp B
+          span=classes.classId 
+      
+      a.btn.btn-primary.btn-sm.mt-4.font-weight-bold(target='_blank', href='https://m.me/giasuquangdat', rel='nofollow')
+        i.fab.fa-facebook-messenger
+        span &Dstrok;i t&#x1EDB;i Messenger
+      h4.mt-5 C&oacute; 2 c&aacute;ch th&#x1EE9;c &dstrok;&#x1EC3; b&#x1EA1;n nh&#x1EAD;n l&#x1EDB;p:
+      h5.mt-4 1) Nh&#x1EAD;n l&#x1EDB;p t&#x1EA1;i trung t&acirc;m
+      p
+        | Bạn có thể đến trung tâm để nhận lớp (8h-18h, Thứ 2 - Thứ 7). Bạn cần mang theo chứng minh thư và thẻ sinh viên (Nếu là sinh viên).
+      p
+        | Địa chỉ trung tâm: Số 20 Lê Thanh Nghị, Hai Bà Trưng, Hà Nội.
+        
+      h5.mt-4 2) Nhận lớp online
+      p
+        | Bạn chuyển khoản tiền đặt cọc (nếu nhận online thì phải đặt cọc 100%), sau đó trung tâm sẽ gửi hợp đồng gia sư đến email của bạn. Trong hợp đồng sẽ có đầy đủ thông tin của phụ huynh, học viên và các điều khoản hoàn phí.
+      p Sau 30 ngày, số tiền đặt cọc sẽ được chuyển thành phí nhận lớp.
+      ul.list-square
+        li
+          | Xem 
+          a(href='/chinh-sach-hoan-phi') Ch&iacute;nh s&aacute;ch ho&agrave;n ph&iacute;
+          | .
+        li
+          | Xem 
+          a(href='/chinh-sach-hoc-thu') Ch&iacute;nh s&aacute;ch h&#x1ECD;c th&#x1EED;
+          | .
+        li
+          | Xem 
+          a(href='/thong-tin-tai-khoan') Th&ocirc;ng tin chuy&#x1EC3;n kho&#x1EA3;n
+          | .

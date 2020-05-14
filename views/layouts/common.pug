@@ -1,0 +1,153 @@
+html(lang="vi")
+	head
+		
+		meta(charset='utf-8')
+		meta(name='viewport', content='width=device-width, initial-scale=1')
+		link(rel='stylesheet', href='https://maxcdn.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css')
+		script(src='https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js')
+		script(src='https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js')
+		script(src='https://maxcdn.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js')
+		script(type='text/javascript', src='/js/giasu.js')
+		script(src='https://kit.fontawesome.com/a076d05399.js')
+		
+		link(rel='stylesheet', href='/styles/giasu.css')
+		link(rel='stylesheet', href='https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css')
+
+	body
+		//- #top Back to Top
+		//- .fixed-fb-chat(style='position: fixed;bottom: 2px;right: 5px;z-index: 9999;overflow: hidden; opacity:0.5;')
+		//- 	a#goToMess(href='https://m.me/laptop88.vn', target='_blank')
+		//- 		img(src='/image/mes.png', alt='chat với laptop88', width='250px')
+
+		
+		.container
+			.row
+				.col-sm
+					img#img1(src='/image/52Slide-2-.jpg')
+
+
+			ul.nav.nav-pills.nav-justified(style="background-color: #FFF")
+				li.nav-item
+					a.nav-link(href='/') Trang chủ 
+				li.nav-item
+					a.nav-link(href='/danh-sach-lop-moi') Danh sách lớp mới 
+				li.nav-item
+					a.nav-link(href='/cach-thuc-nhan-lop') Cách thức nhận lớp 
+				li.nav-item
+					a.nav-link(href='/chinh-sach-hoan-phi') Chính sách hoàn phí 
+				li.nav-item
+					a.nav-link(href='/chinh-sach-hoc-thu') Chính sách học thử 
+				li.nav-item
+					a.nav-link(href='/lien-he') Liên hệ 
+
+		.container
+			#content2.row(style=" box-shadow: 1px 1px 1px 1px #888")
+				#tvmp.col-sm-3(style='background-color: #FFF')
+					#tuvan(style='background-color:#F60') TƯ VẤN MIỄN PHÍ
+					div
+						small
+							strong Văn phòng
+					div(style='color:red') 19001000
+					div (8h đến 18h)
+					p
+					div
+						small
+							strong Hotline
+					div(style='color:red') 0868389999
+					hr
+					
+					if user
+						ul.list-unstyled.menu-nav-secondary
+							li.nav-item.my-profile
+								.dropdown
+									button.btn.btn-secondary.dropdown-toggle(type='button', data-toggle='dropdown')
+										i.fa.fa-user-circle-o(style="font-size:36px")
+										span.font-weight-bold.m-2.pb-2=user.name
+									ul.dropdown-menu.p-2
+										li
+											a.nav-item(href='/myaccount') Mã gia sư : 
+											span=user.id
+										li
+											a.nav-item(href='/myaccount/change_password') &Dstrok;&#x1ED5;i m&#x1EAD;t kh&#x1EA9;u
+							li.nav-item.mt-5
+								a.btn.btn-lg-x.btn-primary.font-weight-bold(href='/myaccount') Cập nhật thông tin 
+							li.nav-item.m-4
+								a.btn.btn-outline-dark.font-weight-bold(href='/logout', rel='nofollow') Đăng xuất 
+					else if admin
+						ul.list-unstyled.menu-nav-secondary
+							li.nav-item.my-profile
+								.dropdown
+									button.btn.btn-secondary.dropdown-toggle(type='button', data-toggle='dropdown')
+										i.fa.fa-user-circle-o(style="font-size:36px")
+										span.font-weight-bold.m-2.pb-2 Admin
+					
+							
+							li.nav-item.m-4
+								a.btn.btn-outline-dark.font-weight-bold(href='/logoutAdmin', rel='nofollow') Đăng xuất  
+
+					else
+						div
+							strong
+								small Phụ huynh
+						
+						a.btn.btn-lg-x.btn-warning.font-weight-bold(href="/dang-ky-thue-gia-su") Đăng ký thuê gia sư
+						hr
+						div
+							strong
+								small Gia sư
+						a.btn.btn-lg-x.btn-primary.font-weight-bold(href='/register') &Dstrok;&abreve;ng k&yacute; l&agrave;m gia s&#x1B0;
+
+				
+						p
+						a.btn.btn-login.btn-secondary.font-weight-bold(href='/login', rel='nofollow') &Dstrok;&abreve;ng nh&#x1EAD;p v&agrave;o t&agrave;i kho&#x1EA3;n
+
+					
+				#anhchuyendong.col-sm-9(style='background-color:#FFC')
+					#demo.carousel.slide(data-ride='carousel')
+						// Indicators
+						ul.carousel-indicators
+							li.active(data-target='#demo', data-slide-to='0')
+							li(data-target='#demo', data-slide-to='1')
+							li(data-target='#demo', data-slide-to='2')
+						// The slideshow
+						.carousel-inner
+							.carousel-item.active
+								img(src='/image/gia-su-ong-mat-troi.jpg', alt='Los Angeles', width='100%', height='450')
+							.carousel-item
+								img(src='/image/doi-ngu-gia-su-tay-nghe-cao.jpg', alt='Chicago', width='100%', height='450')
+							.carousel-item
+								img(src='/image/sinh viên gia sư.jpg', alt='New York', width='100%', height='450')
+						// Left and right controls
+						a.carousel-control-prev(href='#demo', data-slide='prev')
+							span.carousel-control-prev-icon
+						a.carousel-control-next(href='#demo', data-slide='next')
+							span.carousel-control-next-icon
+			.row
+				.col-sm
+					marquee(style='color:#E90325') HƠN 10 NĂM KINH NGHIỆM tìm gia sư cho hơn 10000 PHỤ HUYNH
+		.container
+			div(style='background-color: #FFF')
+				.custom(style='border: 1px solid #e0e0e0;background: #fff;margin-bottom: 22px;line-height:1.5; padding:20px; box-shadow: 1px 1px 1px 1px #888')
+					block content
+				
+						
+		.container
+			footer.page-footer.font-small.teal
+				.text-center.text-md-left(style='background-color:#FFF; box-shadow: 1px 1px 1px 1px #888')
+					.row
+						.col-md-6.mt-md-0.mt-1(style='padding:30px')
+							h5.text-uppercase.font-weight-bold GIA SƯ QUANG ĐẠT
+					
+							br
+							.list
+								small
+									p Hotline: 0868389674-0868387777
+									p Mail: dat21051999@gmail.com
+									p Địa chỉ: Tầng 3, Số 20 Lê Thanh Nghị, Hai Bà Trưng, Hà Nội
+						hr.clearfix.w-100.d-md-none.pb-3
+						.col-md-6.mb-md-0.mb-1(style='padding:30px')
+							h5.text-uppercase.font-weight-bold BẢN ĐỒ
+							.box-ft.box-map
+								iframe(src='https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3724.730274944108!2d105.84797571488299!3d21.003446486012106!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3135ac74f21ad2c7%3A0x8e1a68269eb14672!2zMjAgTMOqIFRoYW5oIE5naOG7iywgQ-G6p3UgROG7gW4sIEhhaSBCw6AgVHLGsG5nLCBIw6AgTuG7mWksIFZpZXRuYW0!5e0!3m2!1sen!2s!4v1571669650305!5m2!1sen!2s', width='90%', height='220', frameborder='0', style='border:1px solid ', allowfullscreen='')
+				.footer-copyright.text-center.py-1(style='background-color:#FFF; padding: 1px') Copyright: Giasuquangdat.vn:
+					a(href='https://www.facebook.com/profile.php?id=100012059710190', target='_blank')  Thiết kế Web by Quang Đạt
